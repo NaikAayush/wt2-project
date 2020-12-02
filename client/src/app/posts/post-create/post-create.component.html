@@ -1,0 +1,92 @@
+<!-- <form #userForm="ngForm" (ngSubmit)="onSave(userForm.value)" novalidate>
+  <div [ngClass]="'border'">
+    <input name="id" type="hidden" [(ngModel)]="id" />
+    Username:
+    <input name="username" type="text" required [(ngModel)]="username" />
+
+    Post:<input name="userpost" required type="text" [(ngModel)]="userpost" />
+
+    <input type="submit" value="{{ valbutton }}" />
+    <button (click)="runModel(userpost)">RUN MODEL</button>
+  </div>
+</form>
+<br />
+<div>
+  Post:<input name="userpost" required type="text" [(ngModel)]="userpost" />
+
+  <button (click)="runModel(userpost)">RUN MODEL</button>
+</div>
+<br /> -->
+
+<mat-card>
+  <form #userForm="ngForm" (ngSubmit)="onSave(userForm.value)" novalidate>
+    <div>
+      <input name="id" type="hidden" [(ngModel)]="id" />
+      <mat-form-field class="username">
+        <mat-label>Username</mat-label>
+        <input
+          name="username"
+          type="text"
+          required
+          [(ngModel)]="username"
+          matInput
+          placeholder="username"
+          value="{{ username }}"
+          disabled
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="title">
+        <mat-label>Title</mat-label>
+        <input
+          name="title"
+          type="text"
+          required
+          [(ngModel)]="title"
+          matInput
+          placeholder="Title"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="userpost">
+        <mat-label>Post</mat-label>
+        <textarea
+          matInput
+          name="userpost"
+          required
+          rows="10"
+          type="text"
+          [(ngModel)]="userpost"
+          placeholder="Ex. It makes me feel..."
+        ></textarea>
+      </mat-form-field>
+      <br />
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        value="{{ valbutton }}"
+      >
+        POST
+      </button>
+      <br />
+      <br />
+      <!-- <button mat-raised-button color="primary" (click)="runModel(userpost)">
+        RUN MODEL
+      </button> -->
+    </div>
+  </form>
+</mat-card>
+
+<div [ngClass]="'border'" *ngFor="let post of Data; let i = index">
+  <mat-card>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.userpost }}</p>
+    <button mat-raised-button color="primary" (click)="edit(post)">Edit</button>
+
+    <button mat-raised-button color="warn" (click)="delete(post._id)">
+      Delete
+    </button>
+  </mat-card>
+</div>

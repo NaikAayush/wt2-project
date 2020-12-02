@@ -1,0 +1,14 @@
+<mat-card>
+  <div *ngIf="cartItems.length === 0">Your Cart is Empty.</div>
+
+  <ul *ngIf="cartItems.length > 0">
+    <li *ngFor="let item of cartItems">
+      <app-cart-item [cartItem]="item"></app-cart-item>
+    </li>
+
+    <h3><strong>Total</strong> {{ cartTotal | currency: "INR" }}</h3>
+  </ul>
+  <button mat-raised-button color="primary" routerLink="/checkout">
+    CHECKOUT
+  </button>
+</mat-card>

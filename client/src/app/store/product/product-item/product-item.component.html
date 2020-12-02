@@ -1,0 +1,26 @@
+<mat-card>
+  <div>
+    <img width="100%" [src]="productItem.imageUrl" />
+
+    <div>
+      <p>
+        <strong>{{ productItem.price | currency: "INR" }}</strong>
+        <i class="fa fa-heart-o"></i>
+      </p>
+
+      <p>{{ productItem.description }}</p>
+      <div>
+        <div class="btn-group">
+          <button
+            type="button "
+            mat-raised-button
+            color="primary"
+            (click)="handleAddtoCart()"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

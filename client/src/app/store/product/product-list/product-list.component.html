@@ -1,0 +1,18 @@
+<!-- <div class="row">
+  <div class="col-md-4" *ngFor="let product of productList">
+    <app-product-item [productItem]="product"></app-product-item>
+  </div>
+</div> -->
+
+<mat-grid-list cols="3" rowHeight="1:1.7">
+  <!-- <div class="col-md-4" > -->
+  <mat-grid-tile *ngFor="let product of productList">
+    <app-product-item [productItem]="product"> </app-product-item>
+  </mat-grid-tile>
+
+  <!-- </div> -->
+</mat-grid-list>
+<!-- <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile> -->

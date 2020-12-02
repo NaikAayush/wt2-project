@@ -1,0 +1,6 @@
+<div [ngClass]="'border'" *ngFor="let post of Data; let i = index">
+  <h5>{{ post.username }}</h5>
+  <p>{{ post.userpost }}</p>
+  <button (click)="edit(post)">Edit</button>
+  <button (click)="delete(post._id)">Delete</button>
+</div>
